@@ -1,8 +1,5 @@
 {
     "devCommand": "uvicorn main:app",
-    "engines": {
-        "node": "18.x"
-    },
     "builds": [
         {
             "src": "main.py",
