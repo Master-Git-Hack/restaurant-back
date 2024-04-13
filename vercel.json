@@ -1,5 +1,8 @@
 {
     "devCommand": "uvicorn main:app",
+    "engines": {
+        "node": "18.x"
+    },
     "builds": [
         {
             "src": "main.py",
@@ -9,15 +12,15 @@
     "routes": [
         {
             "src": "/",
-            "dest": "app:main"
+            "dest": "main.py"
         },
         {
             "src": "/docs",
-            "dest": "docs/index.html"
+            "dest": "main.py"
         },
         {
             "src": "/openapi.json",
-            "dest": "docs/openapi.json"
+            "dest": "main.py"
         }
     ]
 }
