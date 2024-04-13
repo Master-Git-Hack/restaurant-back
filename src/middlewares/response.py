@@ -19,7 +19,7 @@ class Response:
 
     __success_messages: dict = {}
     __errors_messages: dict = {}
-    __path: str = config.PATHS.static
+    __path: str = config.PATH.static
 
     def __init__(self) -> None:
         try:

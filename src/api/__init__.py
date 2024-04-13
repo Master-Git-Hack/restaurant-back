@@ -1,23 +1,24 @@
 from fastapi import Request
 from fastapi.responses import RedirectResponse
-from fastapi_jwt_auth.exceptions import AuthJWTException
 
 from .. import app, config, logger
 
 # from ..middlewares.database import InstanceDB
 from ..middlewares.response import Response as __Response
 
+# from fastapi_jwt_auth.exceptions import AuthJWTException
 
-@app.exception_handler(AuthJWTException)
-async def authjwt_exception_handler(request: Request, exc: AuthJWTException):
-    __response = __Responses()
-    logger.bind(payload=await request.json()).debug(
-        f"----------> Unexpected error:\n {str(exc)}"
-    )
-    return __response.error(
-        status_code=exc.status_code,
-        message=exc.message,
-    )
+
+# @app.exception_handler(AuthJWTException)
+# async def authjwt_exception_handler(request: Request, exc: AuthJWTException):
+#     __response = __Responses()
+#     logger.bind(payload=await request.json()).debug(
+#         f"----------> Unexpected error:\n {str(exc)}"
+#     )
+#     return __response.error(
+#         status_code=exc.status_code,
+#         message=exc.message,
+#     )
 
 
 # idb = InstanceDB()
